@@ -58,7 +58,9 @@ pin.remlf90 <- function(object,formula,signif=FALSE,digit=5,vres=FALSE) {
   formula<-as.formula(paste(dd[2],dd[3],sep=' ~ '))
   
   transform<-formula
-  aa<-object$var[,"Estimated variances"]
+  #aa<-object$var[,"Estimated variances"]
+  aa1 <- breedRPlus::var(object)
+  aa <- aa1[, "component"]
   pframe <- as.list(aa)
   names(pframe) <- paste("x", seq(1, length(pframe)), sep = "")
   tvalue<-eval(deriv(transform[[length(transform)]], names(pframe)),pframe)
