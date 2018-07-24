@@ -135,7 +135,7 @@ batch1 <- function(data,FMod,RMod=NULL,
   #names(vv2) #h2, h2.se
   if(!is.null(pformula)){
     nn1<-ncol(res.ls)
-    vv2<-breedRPlus::pin(bdR, pformula)   # h2 ~ 4 * V1/(V1+V2)
+    vv2<-breedRPlus::pin(bdR, pformula,vres=T)   # h2 ~ 4 * V1/(V1+V2)
     res.ls[,nn1+1]<-round(vv2[1],3)   # tvalue
     res.ls[,nn1+2]<-round(vv2[2],3)   # tv.se
     names(res.ls)[-1:-2]<-c(NVar,Nvar.se,names(vv2))
