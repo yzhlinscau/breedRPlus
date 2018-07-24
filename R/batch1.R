@@ -23,12 +23,14 @@
 #' library(breedR)
 #' library(breedRPlus)
 #' library(tidyr)
+#' library(plyr)
+#' library(dplyr)
 #' 
 #' data(douglas)
 #' S3<-subset(douglas,site=='s3')
 #' #summary(S3);str(S3)
 #' 
-#' S3a<-filter(S3,is.na(dad)) # hs
+#' S3a<-dplyr::filter(S3,is.na(dad)) # hs
 #' S3a<-transform(S3a,Mum=factor(mum))
 #' S3a<-droplevels(S3a)
 #' names(S3a)[7:8]<-c('x1','y1')
@@ -74,6 +76,8 @@
 batch1 <- function(data,FMod,RMod=NULL,
                        geneticM=NULL,SpM=NULL,
                        pformula=NULL) {
+  
+  options(warn=-1)
   
   if(!is.null(RMod)){
     if(!is.null(geneticM)){
