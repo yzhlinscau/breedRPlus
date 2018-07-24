@@ -49,7 +49,6 @@ pin <- function(object,formula,signif,digit,vres){
 pin.remlf90 <- function(object,formula,signif=FALSE,digit=5,vres=FALSE) {
   
   #require(msm, quietly = TRUE)
-  #require(AAfun)
   
   if (!inherits(object, "breedR")) 
     stop("Argument must be a breedR object")
@@ -67,13 +66,13 @@ pin.remlf90 <- function(object,formula,signif=FALSE,digit=5,vres=FALSE) {
   tname <- if(length(transform)==3){transform[[2]]}else ""
   
   invAI <- object$reml$invAI
-  se <- deltamethod(transform,aa,invAI)
+  se <- msm::deltamethod(transform,aa,invAI)
   
   tvalue<-round(tvalue,digit)
   se<-round(se,digit)
   result<-data.frame(row.names=tname, Estimate=tvalue, SE=se)
   result1<-result
-  result1$sig.level<-sig.level(tvalue,se)
+  result1$sig.level<-breedRPlus::sig.level(tvalue,se)
   
   if(vres==FALSE){cat("\n")
     #options(digits=digit)
