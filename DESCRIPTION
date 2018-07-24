@@ -1,0 +1,15 @@
+Package: breedRPlus
+Type: Package
+Title: Augments the Use of 'breedR' in Fitting Mixed Models
+Depends: msm
+Suggests: breedR ,plyr, dplyr
+Version: 1.01
+Date: 2018-7-24
+Author: Yuanzhen Lin
+Maintainer: Yuanzhen Lin <yzhlinscau@163.com>
+Description: This package adds some functions for breedR packages.
+License: GPL-3
+LazyData: yes
+NeedsCompilation: no
+Repository: CRAN
+RoxygenNote: 6.0.1
