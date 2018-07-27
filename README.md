@@ -14,7 +14,7 @@ present.
 ``` r
 install.packages(c('devtools','dplyr','nadiv','ggplot2','plyr','msm','reshape2'))
 
-devtools::install_github(c('yzhlinscau/bdRPlus'))
+devtools::install_github(c('yzhlinscau/breedRPlus'))
 ```
 
 ## breedRPlus function
