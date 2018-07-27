@@ -49,8 +49,7 @@ m1 <- remlf90(fixed = H04 ~ 1 + orig,
 
 #### analysis results
 
-test trait’s
-norm
+test trait’s norm
 
 ``` r
 plot1(m1)
@@ -118,7 +117,7 @@ pin(im1, h2 ~ V2/(V2 + V3))
 ## h2  0.27315 0.12501
 ```
 
-## 02 singe trait-batch anlysis
+## 02 singe trait--batch analysis
 
 data reshape
 
@@ -130,7 +129,7 @@ df <- tidyr::gather(S3a, key = Trait, y, c(-1:-8,-12,-14:-16))
 ### 02A family model
 
 ``` r
-# for parent model
+# for family model
 fixed <- y ~ 1 + orig
 random1 <- ~ Mum + block
 pformula1 <- h2 ~ 4 * V1/(V1 + V3)
@@ -158,10 +157,10 @@ mm1
 ## 4      436.16 0.273 0.125
 ```
 
-### 02B tree model
+### 02B tree(animal) model
 
 ``` r
-# for parent model
+# for tree model
 fixed <- y ~ 1 + orig
 random2 <- ~ block
 genetic <- list(model = 'add_animal', 
