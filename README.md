@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/142149477.svg)](https://zenodo.org/badge/latestdoi/142149477)
+
+
 BreedRPlus manual
 ================
 
